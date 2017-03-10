@@ -138,6 +138,10 @@ public class WxMpInMemoryConfigStorage implements WxMpConfigStorage {
     return this.cardApiTicket;
   }
 
+  public void setCardApiTicket(String cardApiTicket) {
+    this.cardApiTicket = cardApiTicket;
+  }
+
   @Override
   public Lock getCardApiTicketLock() {
     return this.cardApiTicketLock;
@@ -146,6 +150,14 @@ public class WxMpInMemoryConfigStorage implements WxMpConfigStorage {
   @Override
   public boolean isCardApiTicketExpired() {
     return System.currentTimeMillis() > this.cardApiTicketExpiresTime;
+  }
+
+  public long getCardApiTicketExpiresTime() {
+    return cardApiTicketExpiresTime;
+  }
+
+  public void setCardApiTicketExpiresTime(long cardApiTicketExpiresTime) {
+    this.cardApiTicketExpiresTime = cardApiTicketExpiresTime;
   }
 
   @Override
